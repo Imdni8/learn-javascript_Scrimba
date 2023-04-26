@@ -1,5 +1,6 @@
-function call42() {
-	console.log(42)
-} 
+let currentLap = 0
 
-call42()
+function lapAdder() {
+	currentLap = currentLap + 1
+	console.log("Current lap is " + currentLap)
+} 
