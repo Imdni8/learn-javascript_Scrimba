@@ -18,7 +18,7 @@ function adder() {
 // Function - for saving the passenger count in history -> then reseting the count -> 
 function save() {
 	console.log("user saved")
-	saveMsg += " - " + passengers
+	saveMsg += passengers + " - "
 	savedCountHTML.innerText = saveMsg
 	passengers = 0
 	currentCountHTML.innerText = passengers

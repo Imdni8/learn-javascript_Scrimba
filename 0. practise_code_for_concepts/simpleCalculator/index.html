@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+</head>
+<body>
+    <h1>Step 1: Input numbers for calculation</h1>
+    <p>Enter Number 1</p>
+    <input type="number" id="Num1" onchange="formchange()">
+
+    <p>Enter Number 2</p>
+    <input type="number" id="Num2" onchange="formchange()">
+
+    <h1>Step 2: Choose an operation</h1>
+    <button onclick="add()">Add</button>
+    <button onclick="substract()">Substract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="division()">Divide</button>
+
+    <h1>Step 3: Check answer here</h1>
+    <p id="answer">See it here after completing steps 1 & 2</p>
+    <p id="rationale"></p>
+
+    <!-- JS bits -->
+    <script src="index.js"></script>
+    
+</body>
+</html>
