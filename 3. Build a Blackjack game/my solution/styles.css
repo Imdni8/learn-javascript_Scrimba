@@ -1,6 +1,7 @@
 body {
     background-color: green;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     color: white;
     text-align: center;
     font-weight: 800;
@@ -14,9 +15,20 @@ h1 {
     font-style: italic;
 }
 
+.btn-box {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
 button {
     width: 150px;
     background-color: goldenrod;
     color: green;
     padding: 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 900;
 }

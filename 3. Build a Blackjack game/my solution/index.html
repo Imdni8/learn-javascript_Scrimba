@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="styles.css">
-    
-    <title>BlackJack</title>
-</head>
-<body>
-    <h1>BlackJack</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <p id="Msg-el">Want to play a round</p>
+        <link rel="stylesheet" href="styles.css" />
 
-    <p>Cards: <span id="cards"></span> </p>
-    <p>Sum: <span id="sum"></span></p>
+        <title>BlackJack</title>
+    </head>
+    <body>
+        <h1>BlackJack</h1>
 
-    <button onclick="startGame()">Play game</button>
+        <blockquote>
+            Dealer: <span id="Msg-el">Want to play a round?</span>
+        </blockquote>
 
-    <!-- Integrating JS -->
-    <script src="index.js"></script>
-</body>
+        <p>Cards: <span id="cards"></span></p>
+        <p>Sum: <span id="sum"></span></p>
+
+        <div class="btn-box">
+            <button id="firstServe" onclick="startGame()">
+                Yes, let's start
+            </button>
+
+            <button id="newCardBtn" onclick="newCard()">New Card</button>
+        </div>
+
+        <!-- Integrating JS -->
+        <script src="index.js"></script>
+    </body>
 </html>
