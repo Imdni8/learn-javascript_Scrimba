@@ -1,10 +1,11 @@
 let myLeads = []
+let count = 0
 
 // targetting DOM elements
 const inputField = document.getElementById("input-field")
 const saveBtn = document.getElementById("save-btn")
-const savedLeads = document.querySelector(".leads")
-const leadNum = document.querySelector("#lead-num")
+const leadCount = document.querySelector("#lead-count")
+const renderLeads = document.querySelector(".leads")
 
 
 saveBtn.addEventListener("click", function() {
@@ -12,12 +13,15 @@ saveBtn.addEventListener("click", function() {
     myLeads.push(inputField.value)
     console.log(myLeads)
 
-    //render lead stats
-    // for (let i=0; i<myLeads.length; i++) {
-    //     savedLeads.innerHTML += "<li>" + myLeads[i] + "</li>"
-    // }
+    //increment count
+    count += 1
+    leadCount.textContent = count
 
-    savedLeads.innerHTML += "<li>" + myLeads[-1] + "</li>"
+    //render lead stats
+    renderLeads.innerHTML = ""
+    for (let i=0; i<myLeads.length; i++) {
+        renderLeads.innerHTML += "<li>" + myLeads[i] + "</li>"
+    }
 
     //reset the field
     inputField.value = ""
