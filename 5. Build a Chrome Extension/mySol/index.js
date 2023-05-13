@@ -17,7 +17,7 @@ saveBtn.addEventListener("click", function() {
     //     savedLeads.innerHTML += "<li>" + myLeads[i] + "</li>"
     // }
 
-    savedLeads.innerHTML += "<li>" + myLeads.splice[-1] + "</li>"
+    savedLeads.innerHTML += "<li>" + myLeads[-1] + "</li>"
 
     //reset the field
     inputField.value = ""
