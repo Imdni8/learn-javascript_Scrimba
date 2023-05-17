@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    color: green;
 }
 
 input {
@@ -21,4 +22,18 @@ button {
     color: white;
     height: 2em;
     border: none;
+}
+
+ul {
+    padding-left: 0;
+    margin-top: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: green;
+    text-decoration: none;
 }

@@ -13,17 +13,27 @@ saveBtn.addEventListener("click", function() {
     myLeads.push(inputField.value)
     console.log(myLeads)
 
-    //increment count
+    //increment count (number of leads in MyLeads) - in DOM
     count += 1
     leadCount.textContent = count
 
-    //render lead stats
-    renderLeads.innerHTML = ""
+    //construct the list
+    let listItems = ""
     for (let i=0; i<myLeads.length; i++) {
-        renderLeads.innerHTML += "<li>" + myLeads[i] + "</li>"
+        listItems += `
+        <li>
+            <a target='_blank' href= "${myLeads[i]}">
+            ${myLeads[i]}
+            </a>
+        </li>
+        `
     }
+
+    console.log(listItems)
+
+    //render the list - in DOM
+    renderLeads.innerHTML = listItems
 
     //reset the field
     inputField.value = ""
 })
-
