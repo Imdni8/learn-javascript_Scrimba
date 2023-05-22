@@ -6,6 +6,7 @@ const inputField = document.getElementById("input-field")
 const saveBtn = document.getElementById("save-btn")
 const leadCount = document.querySelector("#lead-count")
 const renderLeads = document.querySelector(".leads")
+const clearListBtn = document.querySelector("#del-btn")
 
 //render out localstorage if there is data
 if (localStorage.getItem("Leads") !== null) {
@@ -59,4 +60,12 @@ saveBtn.addEventListener("click", function() {
 
     //render the list - in DOM
     renderLeads.innerHTML = listItems    
+})
+
+//clear list
+clearListBtn.addEventListener("click", function() {
+    localStorage.clear()
+    myLeads = []
+    leadCount.textContent = myLeads.length
+    renderLeads.innerHTML = ""
 })
