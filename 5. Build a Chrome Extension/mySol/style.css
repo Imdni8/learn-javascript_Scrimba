@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     color: green;
+    min-width: 400px;
 }
 
 input {
@@ -33,7 +34,8 @@ button:hover {
     box-shadow: 0px 2px 4px rgb(13, 89, 13);
 }
 
-#save-btn {
+#save-btn,
+#get-link {
     background-color: green;
     color: white;
 }
