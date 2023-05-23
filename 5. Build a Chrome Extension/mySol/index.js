@@ -16,13 +16,7 @@ const renderLeads = document.querySelector(".leads")
 
 //-----support functions-------
 //add render function here because it repeats in 3 places
-
-//render out localstorage if there is data
-if (localStorage.getItem("Leads") !== null) {
-    myLeads =  JSON.parse(localStorage.getItem("Leads"))
-
-    leadCount.textContent = myLeads.length
-
+function renderList() {
     let listItems = ""
     for (let i=0; i<myLeads.length; i++) {
         listItems += `
@@ -37,12 +31,19 @@ if (localStorage.getItem("Leads") !== null) {
     renderLeads.innerHTML = listItems
 }
 
+//render out localstorage if there is data
+if (localStorage.getItem("Leads") !== null) {
+    myLeads =  JSON.parse(localStorage.getItem("Leads"))
+
+    leadCount.textContent = myLeads.length
+    renderList()
+}
+
 
 //Save btn function
 saveBtn.addEventListener("click", function() {
     //push lead to myLeads array on "SAVE INPUT" btn click
     myLeads.push(inputField.value)
-    console.log(myLeads)
 
     //reset the field
     inputField.value = ""
@@ -54,21 +55,7 @@ saveBtn.addEventListener("click", function() {
     localStorage.setItem("Leads", JSON.stringify(myLeads))
 
     //construct the list
-    let listItems = ""
-    for (let i=0; i<myLeads.length; i++) {
-        listItems += `
-        <li>
-            <a target='_blank' href= "${myLeads[i]}">
-            ${myLeads[i]}
-            </a>
-        </li>
-        `
-    }
-
-    console.log(listItems)
-
-    //render the list - in DOM
-    renderLeads.innerHTML = listItems    
+    renderList()   
 })
 
 //clear list
@@ -97,20 +84,6 @@ getLinkBtn.addEventListener("click", function() {
         localStorage.setItem("Leads", JSON.stringify(myLeads))
 
         //construct the list
-        let listItems = ""
-        for (let i=0; i<myLeads.length; i++) {
-            listItems += `
-            <li>
-                <a target='_blank' href= "${myLeads[i]}">
-                ${myLeads[i]}
-                </a>
-            </li>
-            `
-        }
-
-        console.log(listItems)
-
-        //render the list - in DOM
-        renderLeads.innerHTML = listItems    
+        renderList()  
     })
 })
