@@ -8,6 +8,22 @@
 // "The 2 best fruits are Apples, Bananas"
 
 // Use both a for loop and a template string to solve the challenge
+let descrip = "best fruits"
+let array = ["Apples", "Bananas"]
+
 function generateSentence(desc, arr) {
-    
+    let parsedList = ""
+
+    for (let i=0; i<arr.length;i++) {
+        if (i=== (arr.length-1)) {
+            parsedList += arr[i] + "."
+        }
+        else {
+            parsedList += arr[i] + ", "
+        }
+    }
+
+    console.log(`The ${arr.length} ${desc} are ${parsedList}`) 
 }
+
+generateSentence(descrip, array)
